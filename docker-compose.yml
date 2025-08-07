@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  donut-pipeline:
+    build: .
+    container_name: donut-pipeline
+    ports:
+      - "7860:7860"
+    environment:
+      - PAPERLESS_TOKEN=your-token-here
+      - PAPERLESS_SECRET=something_secret
+    volumes:
+      - donut-cache:/root/.cache/huggingface
+      - donut-data:/data
+    restart: unless-stopped
+
+volumes:
+  donut-cache:
+  donut-data:
