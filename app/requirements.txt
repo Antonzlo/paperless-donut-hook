@@ -3,3 +3,4 @@ Pillow
 requests
 fastapi
 uvicorn
+logging
